@@ -282,7 +282,7 @@ export default function JackpotDonutChart({
 
   /* --------------------------------- UI ---------------------------------- */
   return (
-    <div className="flex flex-col items-center relative h-full" style={{ backgroundColor: "#0A001A", borderColor: "#FFD700", borderWidth: 2, borderRadius: "0.5rem" }}>
+    <div className="flex flex-col items-center relative h-full mb-2">
       <div className="w-full flex flex-col items-center gap-0 h-full">
         {/* ------------------------------- RING ------------------------------ */}
         <div

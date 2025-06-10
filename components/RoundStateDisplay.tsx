@@ -26,7 +26,7 @@ export function RoundStateDisplay({
   };
 
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-5">
       <AnimatePresence mode="wait">
         {roundState === 'active' && (
           <motion.div
@@ -62,7 +62,7 @@ export function RoundStateDisplay({
               Round ends in
             </span>
             <span
-              className="text-3xl sm:text-4xl font-extrabold"
+              className="text-3xl sm:text-4xl font-extrabold ml-2"
               style={{
                 fontFamily: 'Visby Round CF, SF Pro Display, sans-serif',
                 color: '#FF1493',

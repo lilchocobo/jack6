@@ -1,6 +1,8 @@
+import { Star } from "lucide-react";
 import { EnterRound } from "./EnterRound";
-import { Header } from "./Header";
+import { HeaderAbsolute } from "./Header";
 import JackpotDonutChart from "./JackpotDonutChart";
+import { TokenSelectorNew } from "./TokenSelectorNew";
 // import { TokenSelector } from "./TokenSelector";
 
 export function DebugBox() {
@@ -29,9 +31,12 @@ export function CenterColumn({
     handleClearDelayedExpand?: any
 }) {
     return (
-        <div className="md:col-span-2 w-full max-w-full min-w-0 h-full min-h-0 flex flex-col">
-            <Header />
-            <div className="w-full h-[340px] md:h-[420px] min-h-0 border-2 border-yellow-500 bg-[#FF69B4]">
+        <div className="md:col-span-2 w-full max-w-full min-w-0 h-full min-h-0 flex flex-col gap-2 ">
+            {/* <div className="pb-4 mb-4">
+                <Header />
+            </div> */}
+            <div className="w-full h-[340px] md:h-[420px] min-h-0  relative pb-20 pt-4 z-5"
+            >
                 {/* <DebugBox /> */}
                 <JackpotDonutChart
                     deposits={currentRoundDeposits}
@@ -39,16 +44,19 @@ export function CenterColumn({
                     simulateData={true}
                     onDepositsChange={setCurrentRoundDeposits}
                 />
+                <div className="absolute bottom-0 left-0 w-full px-4">
+                    <EnterRound
+                        selectedTokens={selectedTokens}
+                        onSelectedTokensChange={setSelectedTokens}
+                    />
+                </div>
+                {/* <HeaderAbsolute /> */}
+
             </div>
-            {/* <div className="flex-shrink-0" style={{ background: "pink" }}>
-          <EnterRound 
-            selectedTokens={selectedTokens}
-            onSelectedTokensChange={setSelectedTokens}
-          />
-        </div> */}
-            <div className="flex-1 min-h-0" style={{ background: "pink", zIndex: 2 }}>
-                <DebugBox />
+            <div className="flex-1 min-h-0" style={{ zIndex: 2, borderColor: "#FFD700", borderWidth: 2, borderRadius: "0.5rem" }}>
+                <TokenSelectorNew />
             </div>
-        </div>
+        </div >
     );
 }
+

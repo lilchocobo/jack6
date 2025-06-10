@@ -18,7 +18,7 @@ export function SpinningWheel({
   shouldReset = false,
 }: SpinningWheelProps) {
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full z-5">
       {/* Main spinning wheel container */}
       <motion.div
         className="w-full h-full"

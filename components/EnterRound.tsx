@@ -41,7 +41,7 @@ declare global {
 export function EnterRound({ selectedTokens, onSelectedTokensChange }: EnterRoundProps) {
   const { authenticated, user } = usePrivy();
   const publicKey = user?.wallet?.address;
-  
+
   const [depositing, setDepositing] = useState(false);
 
   const connection = new Connection(process.env.NEXT_PUBLIC_HELIUS_RPC!);
@@ -67,7 +67,7 @@ export function EnterRound({ selectedTokens, onSelectedTokensChange }: EnterRoun
         const mint = new PublicKey(token.mint);
         const fromAta = getAssociatedTokenAddressSync(mint, pubKey);
         const toAta = getAssociatedTokenAddressSync(mint, new PublicKey(jackpotAddr), true);
-        
+
         if (!(await connection.getAccountInfo(toAta))) {
           tx.add(
             createAssociatedTokenAccountInstruction(
@@ -78,7 +78,7 @@ export function EnterRound({ selectedTokens, onSelectedTokensChange }: EnterRoun
             ),
           );
         }
-        
+
         tx.add(
           createTransferInstruction(
             fromAta,
@@ -104,7 +104,7 @@ export function EnterRound({ selectedTokens, onSelectedTokensChange }: EnterRoun
     try {
       setDepositing(true);
       const tx = await buildTransaction();
-      
+
       if (window.solana && window.solana.signAndSendTransaction) {
         const signature = await window.solana.signAndSendTransaction(tx);
         await connection.confirmTransaction(signature.signature, 'confirmed');
@@ -154,7 +154,7 @@ export function EnterRound({ selectedTokens, onSelectedTokensChange }: EnterRoun
           onClick={handleEnterRound}
           disabled={depositing || selectedTokens.length === 0}
           className="casino-button text-lg font-black uppercase tracking-wider px-8 py-4 border-2 border-[#FFD700] relative overflow-hidden group"
-          style={{ 
+          style={{
             fontFamily: "Visby Round CF, SF Pro Display, sans-serif",
             background: 'linear-gradient(145deg, #FFD700, #DAA520)',
             boxShadow: `
