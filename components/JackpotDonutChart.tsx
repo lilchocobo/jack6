@@ -80,7 +80,7 @@ export default function JackpotDonutChart({
 
   // 🔥 CRITICAL: Block new deposits during animations
   const [isAnimating, setIsAnimating] = useState(false);
-  const animationTimeoutRef = useRef<NodeJS.Timeout>();
+  const animationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   /* ------------------------ data simulation ------------------------ */
   useEffect(() => {
