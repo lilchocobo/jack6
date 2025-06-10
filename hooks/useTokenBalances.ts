@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import useTokenData from "./useTokenData";
 
 const RPC_ENDPOINT = process.env.NEXT_PUBLIC_HELIUS_RPC ?? "";
 
@@ -55,6 +56,7 @@ export function useTokenBalances(publicKey: string | undefined) {
   const [tokens, setTokens] = useState<TokenRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
 
   useEffect(() => {
     if (!publicKey) {
