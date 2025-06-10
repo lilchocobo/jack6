@@ -116,9 +116,9 @@ export function ChatSection({ messages: initialMessages }: ChatSectionProps) {
         </h2>
         
         {/* Messages Area - Takes all available space and scrolls */}
-        <div className="flex-1 min-h-0 overflow-hidden">
+        <div className="flex-1 min-h-0 overflow-y-auto">
           <ScrollArea 
-            className="h-full rounded-lg p-3 min-w-0" 
+            className="rounded-lg p-3 min-w-0" 
             ref={scrollAreaRef}
           >
             <div className="space-y-2 min-w-0">
@@ -170,15 +170,21 @@ export function ChatSection({ messages: initialMessages }: ChatSectionProps) {
       </CardContent>
       
       {/* Input Footer - Pinned to bottom */}
-      <CardFooter className="flex-shrink-0 p-3 border-t border-[#FFD700] min-w-0">
+      <CardFooter className="flex-shrink-0 p-3 border-t border-[#FFD700] min-w-0 relative">
         {authenticated ? (
-          <form onSubmit={handleSend} className="w-full flex items-center gap-2 min-w-0">
-            <div className="flex-shrink-0">
+          <form onSubmit={handleSend} className="w-full flex items-center gap-2 min-w-0 relative">
+            {/* Emoji Picker Button and Floating Picker */}
+            <div className="flex-shrink-0 relative">
               <EmojiPicker 
                 onEmojiSelect={handleEmojiSelect} 
                 isOpen={isEmojiPickerOpen}
                 setIsOpen={setIsEmojiPickerOpen}
               />
+              {isEmojiPickerOpen && (
+                <div className="absolute bottom-full left-0 mb-2 z-50">
+                  {/* The EmojiPicker dropdown content should be rendered here if possible */}
+                </div>
+              )}
             </div>
             <div className="flex-1 min-w-0">
               <div className="relative">
@@ -198,11 +204,7 @@ export function ChatSection({ messages: initialMessages }: ChatSectionProps) {
               </div>
             </div>
           </form>
-        ) : (
-          <div className="w-full min-w-0">
-            <WalletConnect />
-          </div>
-        )}
+        ) : null}
       </CardFooter>
     </Card>
   );

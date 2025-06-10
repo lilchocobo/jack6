@@ -18,8 +18,8 @@ export function Header() {
       <Image
         src="/jackpotlogo.png"
         alt="JACKPOT"
-        width={168}  // 80% of 210
-        height={50}  // 80% of 63
+        width={120}
+        height={36}
         className="object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.8)] relative"
         priority
       />

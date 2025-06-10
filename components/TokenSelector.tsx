@@ -569,31 +569,6 @@ export function TokenSelector({
     if (!isSelectedExpanded) setExpandedToken(null);
   };
 
-  // if (!authenticated) {
-  //   return (
-  //     <div className="w-full relative\" style={{ height: "160px" }}>
-  //       {/* Fixed bottom card */}
-  //       <div className="absolute bottom-0 left-0 right-0" style={{ height: "160px" }}>
-  //         <Card className="casino-box casino-box-gold overflow-hidden p-0 h-full flex flex-col relative">
-  //           <div className="absolute top-2 left-2 z-10">
-  //             <Star className="h-4 w-4 casino-star" fill="currentColor" />
-  //           </div>
-  //           <div className="absolute top-2 right-2 z-10">
-  //             <Star className="h-4 w-4 casino-star" fill="currentColor" />
-  //           </div>
-
-  //           <CardContent className="p-6 flex flex-col justify-center items-center h-full">
-  //             <Wallet className="h-8 w-8 casino-text-gold mb-3" />
-  //             <p className="text-sm casino-text-yellow font-bold mb-4 text-center">
-  //               Connect wallet to select tokens
-  //             </p>
-  //             <WalletConnect />
-  //           </CardContent>
-  //         </Card>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   const baseHeight = 160;
   const expandedHeight = 320;

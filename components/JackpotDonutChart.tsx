@@ -282,12 +282,12 @@ export default function JackpotDonutChart({
 
   /* --------------------------------- UI ---------------------------------- */
   return (
-    <div className="flex flex-col items-center py-6 relative" style={{ backgroundColor: "#0A001A", borderColor: "#FFD700", borderWidth: 2, borderRadius: "0.5rem" }}>
-      <div className="w-full flex flex-col items-center gap-6">
+    <div className="flex flex-col items-center relative h-full" style={{ backgroundColor: "#0A001A", borderColor: "#FFD700", borderWidth: 2, borderRadius: "0.5rem" }}>
+      <div className="w-full flex flex-col items-center gap-0 h-full">
         {/* ------------------------------- RING ------------------------------ */}
         <div
           ref={containerRef}
-          className="relative w-full h-[340px] md:h-[420px]"
+          className="relative w-full h-full"
         >
           <SpinningWheel
             chartData={chartData}

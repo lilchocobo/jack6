@@ -41,11 +41,11 @@ export function LeftColumn({ deposits, onDepositsChange }: LeftColumnProps) {
       >
         <Card className="casino-box casino-box-gold overflow-hidden h-24 flex flex-col">
           <CardContent className="bg-gradient-to-b from-[#4A0E4E] to-[#2D0A30] p-2 flex-1 flex flex-col justify-center items-center">
-            <p className="text-base sm:text-lg md:text-xl uppercase font-bold text-center tracking-wider casino-text-yellow mb-1"
+            <p className="text-lg sm:text-xl md:text-2xl uppercase font-bold text-center tracking-wider casino-text-yellow mb-2"
               style={{ fontFamily: "Visby Round CF, SF Pro Display, sans-serif" }}>
               Total Deposits
             </p>
-            <div className="text-xl sm:text-2xl md:text-3xl font-black casino-text-gold flex items-center"
+            <div className="text-2xl sm:text-3xl md:text-4xl font-black casino-text-gold flex items-center"
               style={{ fontFamily: "Visby Round CF, SF Pro Display, sans-serif" }}>
               $<SlidingNumber value={totalDeposits} />
             </div>

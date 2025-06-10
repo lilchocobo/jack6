@@ -13,7 +13,7 @@ interface RightColumnProps {
 
 export function RightColumn({ messages }: RightColumnProps) {
   return (
-    <div className="h-screen flex flex-col gap-2 py-2">
+    <div className="h-full min-h-0 flex flex-col gap-3">
       {/* Largest Win - Fixed height */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ export function RightColumn({ messages }: RightColumnProps) {
         transition={{ delay: 0.1 }}
         className="flex-shrink-0"
       >
-        <Card className="casino-box casino-box-gold overflow-hidden h-28 flex flex-col">
+        <Card className="casino-box casino-box-gold overflow-hidden h-24 flex flex-col">
           <CardContent className="bg-gradient-to-b from-[#4A0E4E] to-[#2D0A30] p-2 flex-1 flex flex-col justify-center items-center">
             <p className="text-lg sm:text-xl md:text-2xl uppercase font-bold text-center tracking-wider casino-text-yellow mb-2"
               style={{ fontFamily: "Visby Round CF, SF Pro Display, sans-serif" }}>
@@ -41,6 +41,7 @@ export function RightColumn({ messages }: RightColumnProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
         className="flex-1 min-h-0"
+        style={{ backgroundColor: "pink" }}
       >
         <ChatSection messages={messages} />
       </motion.div>
