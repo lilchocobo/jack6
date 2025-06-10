@@ -31,7 +31,7 @@ export function CenterColumn({
     handleClearDelayedExpand?: any
 }) {
     return (
-        <div className="md:col-span-2 w-full max-w-full min-w-0 h-full min-h-0 flex flex-col gap-2 ">
+        <div className="md:col-span-2 w-full max-w-full min-w-0 h-full min-h-0 flex flex-col gap-2 overflow-visible">
             {/* <div className="pb-4 mb-4">
                 <Header />
             </div> */}
@@ -44,16 +44,16 @@ export function CenterColumn({
                     simulateData={true}
                     onDepositsChange={setCurrentRoundDeposits}
                 />
-                <div className="absolute bottom-0 left-0 w-full px-4">
+                {/* <div className="absolute bottom-0 left-0 w-full px-4">
                     <EnterRound
                         selectedTokens={selectedTokens}
                         onSelectedTokensChange={setSelectedTokens}
                     />
-                </div>
+                </div> */}
                 {/* <HeaderAbsolute /> */}
 
             </div>
-            <div className="flex-1 min-h-0" style={{ zIndex: 2, borderColor: "#FFD700", borderWidth: 2, borderRadius: "0.5rem" }}>
+            <div className="flex-1 min-h-0 overflow-visible" style={{ zIndex: 2, borderColor: "#FFD700", borderWidth: 2, borderRadius: "0.5rem" }}>
                 <TokenSelectorNew />
             </div>
         </div >
