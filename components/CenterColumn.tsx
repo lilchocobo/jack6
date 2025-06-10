@@ -35,7 +35,7 @@ export function CenterColumn({
             {/* <div className="pb-4 mb-4">
                 <Header />
             </div> */}
-            <div className="w-full h-[340px] md:h-[420px] min-h-0  relative pb-20 pt-4 z-5"
+            <div className="w-full h-[340px] md:h-[440px] min-h-0  relative pb-20 pt-4 z-5"
             >
                 {/* <DebugBox /> */}
                 <JackpotDonutChart
