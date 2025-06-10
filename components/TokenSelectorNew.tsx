@@ -207,7 +207,7 @@ export function TokenSelectorNew() {
         return (
             <div
                 className={`
-                    relative w-20 h-32 bg-white rounded-xl border-2 border-gray-800 cursor-pointer
+                    relative w-24 h-36 bg-white rounded-xl border-2 border-gray-800 cursor-pointer
                     transition-all duration-150 shadow-lg hover:shadow-xl
                     ${isInBottomRow ? "translate-y-16 hover:translate-y-12" : ""}
                     ${!isInBottomRow && "z-30"}
@@ -351,8 +351,8 @@ export function TokenSelectorNew() {
                 <div
                     ref={topScrollRef}
                     onScroll={handleTopScroll}
-                    className="absolute inset-x-0 -top-10
-               h-full overflow-x-auto  z-20
+                    className="absolute inset-x-0 -top-14
+               h-full overflow-x-auto  z-20 pb-44
                [scrollbar-width:none]"
                 >
                     <div className="relative flex gap-2 px-4 min-w-max h-full items-start">
@@ -364,7 +364,7 @@ export function TokenSelectorNew() {
                             >
                                 <TokenCardComponent token={token} isInBottomRow={false} tokenValuesInSol={tokenValuesInSol} tokenValuesInUSD={tokenValuesInUSD} />
                                 {/* Down chevron that appears on hover */}
-                                <div className="absolute top-full left-1/2 transform -translate-x-1/2 translate-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
+                                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
                                     <div
                                         className="bg-black/70 rounded-full p-1 cursor-pointer hover:bg-black/90 transition-colors"
                                         onClick={(e) => {
